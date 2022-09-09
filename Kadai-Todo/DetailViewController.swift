@@ -14,17 +14,31 @@ class DetailViewController: UIViewController {
     @IBOutlet var contentLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
-    let dateFormatter = DateFormatter()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         titleLabel.text = todo.title
         contentLabel.text = todo.content
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy / MM / dd"
         dateLabel.text = dateFormatter.string(from: todo.date)
     }
     
+    // 次の編集画面へデータを渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEditSegue" {
+            guard let destination = segue.destination as? EditViewController else{
+                fatalError("Failed to prepare DetailViewController.")
+            }
+            destination.todo = self.todo
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
     /*
     // MARK: - Navigation

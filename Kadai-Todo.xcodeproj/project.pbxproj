@@ -18,6 +18,7 @@
 		58F69BA128CAD7CC00B326FB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 58F69BA028CAD7CC00B326FB /* RealmSwift */; };
 		58F69BA328CADBEF00B326FB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F69BA228CADBEF00B326FB /* DetailViewController.swift */; };
 		58F69BA528CAE71D00B326FB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F69BA428CAE71D00B326FB /* AddViewController.swift */; };
+		58F69BA728CB293D00B326FB /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F69BA628CB293D00B326FB /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		58F69B9B28CAD6E500B326FB /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		58F69BA228CADBEF00B326FB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		58F69BA428CAE71D00B326FB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		58F69BA628CB293D00B326FB /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				58F69B9B28CAD6E500B326FB /* Todo.swift */,
 				58F69BA228CADBEF00B326FB /* DetailViewController.swift */,
 				58F69BA428CAE71D00B326FB /* AddViewController.swift */,
+				58F69BA628CB293D00B326FB /* EditViewController.swift */,
 			);
 			path = "Kadai-Todo";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				58F69BA328CADBEF00B326FB /* DetailViewController.swift in Sources */,
 				58F69B8828CAD06100B326FB /* SceneDelegate.swift in Sources */,
 				58F69B9C28CAD6E500B326FB /* Todo.swift in Sources */,
+				58F69BA728CB293D00B326FB /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
