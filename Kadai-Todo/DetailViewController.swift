@@ -14,13 +14,15 @@ class DetailViewController: UIViewController {
     @IBOutlet var contentLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         titleLabel.text = todo.title
         contentLabel.text = todo.content
-        dateLabel.text = todo.date
+        dateLabel.text = dateFormatter.string(from: todo.date)
     }
     
 

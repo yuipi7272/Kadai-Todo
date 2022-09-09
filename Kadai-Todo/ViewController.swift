@@ -35,7 +35,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.textLabel?.text = todoArray[indexPath.row].title
-        cell?.detailTextLabel?.text = todoArray[indexPath.row].date
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy / MM / dd"
+        cell?.detailTextLabel?.text = dateFormatter.string(from: todoArray[indexPath.row].date)
         return cell!
     }
     
@@ -61,7 +64,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let indexPath = table.indexPathForSelectedRow {
             table.deselectRow(at: indexPath, animated: true)
         }
+        table.reloadData()
     }
+    
+    // 左スワイプ時の動作
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let d_todo = todoArray[indexPath.row]
         try! realm.write{

@@ -12,7 +12,7 @@ class AddViewController: UIViewController {
     
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var contentTextView: UITextView!
-    @IBOutlet var dateTextField: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
     
     let realm = try! Realm()
     
@@ -25,7 +25,7 @@ class AddViewController: UIViewController {
     @IBAction func save() {
         let title: String = titleTextField.text!
         let content: String = contentTextView.text!
-        let date: String = dateTextField.text!
+        let date: Date = datePicker.date
         
         let newTodo = Todo()
         newTodo.title = title
