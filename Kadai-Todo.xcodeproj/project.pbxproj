@@ -13,6 +13,11 @@
 		58F69B8D28CAD06100B326FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F69B8B28CAD06100B326FB /* Main.storyboard */; };
 		58F69B8F28CAD06200B326FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F69B8E28CAD06200B326FB /* Assets.xcassets */; };
 		58F69B9228CAD06200B326FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F69B9028CAD06200B326FB /* LaunchScreen.storyboard */; };
+		58F69B9C28CAD6E500B326FB /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F69B9B28CAD6E500B326FB /* Todo.swift */; };
+		58F69B9F28CAD7CC00B326FB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 58F69B9E28CAD7CC00B326FB /* Realm */; };
+		58F69BA128CAD7CC00B326FB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 58F69BA028CAD7CC00B326FB /* RealmSwift */; };
+		58F69BA328CADBEF00B326FB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F69BA228CADBEF00B326FB /* DetailViewController.swift */; };
+		58F69BA528CAE71D00B326FB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F69BA428CAE71D00B326FB /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,9 @@
 		58F69B8E28CAD06200B326FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58F69B9128CAD06200B326FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58F69B9328CAD06200B326FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58F69B9B28CAD6E500B326FB /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		58F69BA228CADBEF00B326FB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		58F69BA428CAE71D00B326FB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F69BA128CAD7CC00B326FB /* RealmSwift in Frameworks */,
+				58F69B9F28CAD7CC00B326FB /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +73,9 @@
 				58F69B8E28CAD06200B326FB /* Assets.xcassets */,
 				58F69B9028CAD06200B326FB /* LaunchScreen.storyboard */,
 				58F69B9328CAD06200B326FB /* Info.plist */,
+				58F69B9B28CAD6E500B326FB /* Todo.swift */,
+				58F69BA228CADBEF00B326FB /* DetailViewController.swift */,
+				58F69BA428CAE71D00B326FB /* AddViewController.swift */,
 			);
 			path = "Kadai-Todo";
 			sourceTree = "<group>";
@@ -83,6 +96,10 @@
 			dependencies = (
 			);
 			name = "Kadai-Todo";
+			packageProductDependencies = (
+				58F69B9E28CAD7CC00B326FB /* Realm */,
+				58F69BA028CAD7CC00B326FB /* RealmSwift */,
+			);
 			productName = "Kadai-Todo";
 			productReference = 58F69B8228CAD06100B326FB /* Kadai-Todo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +128,9 @@
 				Base,
 			);
 			mainGroup = 58F69B7928CAD06100B326FB;
+			packageReferences = (
+				58F69B9D28CAD7CC00B326FB /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 58F69B8328CAD06100B326FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,7 +160,10 @@
 			files = (
 				58F69B8A28CAD06100B326FB /* ViewController.swift in Sources */,
 				58F69B8628CAD06100B326FB /* AppDelegate.swift in Sources */,
+				58F69BA528CAE71D00B326FB /* AddViewController.swift in Sources */,
+				58F69BA328CADBEF00B326FB /* DetailViewController.swift in Sources */,
 				58F69B8828CAD06100B326FB /* SceneDelegate.swift in Sources */,
+				58F69B9C28CAD6E500B326FB /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +381,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		58F69B9D28CAD7CC00B326FB /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		58F69B9E28CAD7CC00B326FB /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58F69B9D28CAD7CC00B326FB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		58F69BA028CAD7CC00B326FB /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58F69B9D28CAD7CC00B326FB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 58F69B7A28CAD06100B326FB /* Project object */;
 }
