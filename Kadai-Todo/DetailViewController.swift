@@ -35,7 +35,6 @@ class DetailViewController: UIViewController {
             destination.todo = self.todo
         }
     }
-
     /*
     // MARK: - Navigation
 

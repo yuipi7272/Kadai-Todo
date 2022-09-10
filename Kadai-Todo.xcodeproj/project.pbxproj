@@ -19,6 +19,7 @@
 		58F69BA328CADBEF00B326FB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F69BA228CADBEF00B326FB /* DetailViewController.swift */; };
 		58F69BA528CAE71D00B326FB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F69BA428CAE71D00B326FB /* AddViewController.swift */; };
 		58F69BA728CB293D00B326FB /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F69BA628CB293D00B326FB /* EditViewController.swift */; };
+		58F69BAA28CCC65B00B326FB /* Ronde-B_square.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F69BA928CCC65B00B326FB /* Ronde-B_square.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		58F69BA228CADBEF00B326FB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		58F69BA428CAE71D00B326FB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		58F69BA628CB293D00B326FB /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		58F69BA928CCC65B00B326FB /* Ronde-B_square.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ronde-B_square.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		58F69B8428CAD06100B326FB /* Kadai-Todo */ = {
 			isa = PBXGroup;
 			children = (
+				58F69BA828CCC5E500B326FB /* fonts */,
 				58F69B8528CAD06100B326FB /* AppDelegate.swift */,
 				58F69B8728CAD06100B326FB /* SceneDelegate.swift */,
 				58F69B8928CAD06100B326FB /* ViewController.swift */,
@@ -81,6 +84,14 @@
 				58F69BA628CB293D00B326FB /* EditViewController.swift */,
 			);
 			path = "Kadai-Todo";
+			sourceTree = "<group>";
+		};
+		58F69BA828CCC5E500B326FB /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				58F69BA928CCC65B00B326FB /* Ronde-B_square.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F69BAA28CCC65B00B326FB /* Ronde-B_square.otf in Resources */,
 				58F69B9228CAD06200B326FB /* LaunchScreen.storyboard in Resources */,
 				58F69B8F28CAD06200B326FB /* Assets.xcassets in Resources */,
 				58F69B8D28CAD06100B326FB /* Main.storyboard in Resources */,

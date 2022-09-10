@@ -28,6 +28,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // editButtonを配置
         navigationItem.leftBarButtonItem = editButtonItem
+        editButtonItem.tintColor = UIColor(red: 116 / 255, green: 152 / 255, blue: 178 / 255, alpha: 1)
+        let bg_image = UIImage(named: "sheep-bg.png")
+        let bg_imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.table.frame.width, height: self.table.frame.height))
+        bg_imageView.contentMode = .scaleAspectFill
+        bg_imageView.image = bg_image
+        table.backgroundView = bg_imageView
     }
     
     // セルの数を指定
@@ -104,7 +110,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.todoArray = Array(realm.objects(Todo.self))
             table.reloadData()
             table.isEditing = false
-            editButtonItem.tintColor = UIColor.systemBlue
+            editButtonItem.tintColor = UIColor(red: 116 / 255, green: 152 / 255, blue: 178 / 255, alpha: 1)
         } else {
             table.isEditing = editing
             editButtonItem.title = "delete"
