@@ -35,10 +35,6 @@ class DetailViewController: UIViewController {
             destination.todo = self.todo
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
 
     /*
     // MARK: - Navigation

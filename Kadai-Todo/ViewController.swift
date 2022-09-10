@@ -14,17 +14,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // Realmの変数を宣言
     let realm = try! Realm()
-    var todoArray: Results<Todo>!
+    var todoArray: [Todo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.todoArray = realm.objects(Todo.self)
+        self.todoArray = Array(realm.objects(Todo.self))
 
         // テーブルビューのデータソースメソッドを書く位置を指定
         table.dataSource = self
         // テーブルビューのデリゲートメソッドを書く位置を指定
         table.delegate = self
+        
+        // editButtonを配置
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     // セルの数を指定
@@ -44,7 +47,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // セルが押されたときに呼ばれるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(String(indexPath.row))が呼ばれました")
+        if table.isEditing == false {
+            print("\(String(indexPath.row))が呼ばれました")
+        } else {
+            print(table.indexPathsForSelectedRows!)
+        }
     }
     
     // 次の遷移画面へデータを渡す
@@ -64,6 +71,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let indexPath = table.indexPathForSelectedRow {
             table.deselectRow(at: indexPath, animated: true)
         }
+        self.todoArray = Array(realm.objects(Todo.self))
         table.reloadData()
     }
     
@@ -73,6 +81,48 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         try! realm.write{
             realm.delete(d_todo)
         }
-        table.deleteRows(at: [indexPath], with: .automatic)
+        self.todoArray = Array(realm.objects(Todo.self))
+        table.reloadData()
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        //override前の処理を継続してさせる
+        super.setEditing(editing, animated: animated)
+        //tableViewの編集モードを切り替える
+        if table.isEditing {
+            if let selectedRows = table.indexPathsForSelectedRows {
+                var d_rowArray: [Todo] = []
+                
+                for d_row in selectedRows {
+                    d_rowArray.append(todoArray[d_row[1]])
+                }
+                print(d_rowArray)
+                try! realm.write {
+                    realm.delete(d_rowArray)
+                }
+            }
+            self.todoArray = Array(realm.objects(Todo.self))
+            table.reloadData()
+            table.isEditing = false
+            editButtonItem.tintColor = UIColor.systemBlue
+        } else {
+            table.isEditing = editing
+            editButtonItem.title = "delete"
+            editButtonItem.tintColor = UIColor.red
+        }
+        print(table.isEditing)
+    }
+    
+    // editing Modeのときは遷移しない
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if table.isEditing {
+            return false
+        } else {
+            return true
+        }
+    }
+    // 並び替えを可能にする
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
